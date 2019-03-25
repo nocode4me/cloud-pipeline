@@ -44,7 +44,8 @@ python2 -m pip install  'dis3==0.1.3' \
                         'PyJWT==1.6.1' \
                         'pypac==0.8.1' \
                         'beautifulsoup4==4.6.1' \
-                        'azure-storage-blob==1.5.0' && \
+                        'azure-storage-blob==1.5.0' \
+                        'google-cloud-storage==1.14.0' && \
 cd $PIPE_CLI_SOURCES_DIR && \
 python2 $PYINSTALLER_PATH/pyinstaller/pyinstaller.py \
                                 --add-data "$PIPE_CLI_SOURCES_DIR/res/effective_tld_names.dat.txt:tld/res/" \
