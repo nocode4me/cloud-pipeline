@@ -177,6 +177,12 @@ public class LogAO implements AccessObject<LogAO> {
         return this;
     }
 
+    public LogAO waitForLog(final String message) {
+        $(log()).shouldHave(matchText(String.format("Additional worker with host=%s has been created.", message)))
+                .waitUntil(visible, COMPLETION_TIMEOUT);
+        return this;
+    }
+
     public LogAO instanceParameters(final Consumer<InstanceParameters> action) {
         expandTab(INSTANCE);
         action.accept(new InstanceParameters());
